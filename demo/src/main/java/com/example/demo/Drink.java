@@ -20,7 +20,21 @@ public class Drink {
     private String colour;
     private String type;
     private String company;
+    private int price;
 
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+
+    public Drink(int price) {
+        this.price = price;
+    }
     public List<Ingredient> getIngredients() {
         return ingredients;
     }
