@@ -50,14 +50,15 @@ public class DrinkServiceImpl implements DrinkService{
             updateDrink.setType(drink.getType());
 
             drinkRepository.save(updateDrink);
+            return updateDrink;
         }else{
             throw new RuntimeException("Drink does not exist");
         }
-        return null;
+
     }
 
     @Override
     public void deleteDrink(long Id) {
-
+        drinkRepository.deleteById(Id);
     }
 }
