@@ -4,6 +4,7 @@ import com.example.demo.Drink;
 import com.example.demo.repository.DrinkRepository;
 import com.example.demo.service.DrinkService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -40,4 +41,9 @@ public class DrinkAPIController {
         return ResponseEntity.ok().body(drinkService.updateDrink(drink));
     }
 
+    @DeleteMapping ("/drink/{id}")
+    public HttpStatus deletDrink(@PathVariable long id ){
+        drinkService.deleteDrink(id);
+        return HttpStatus.OK;
+    }
 }
