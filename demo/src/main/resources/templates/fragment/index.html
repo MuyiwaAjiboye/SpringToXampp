@@ -1,11 +1,11 @@
 <!DOCTYPE html SYSTEM
-        "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf">
-<html lang="en" xmls=" http://w3.org" xmlns:th="https://www.thymeleaf.org">
+        "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html lang="en" xmls=" http://w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
 <head th:replace="~{fragment/fragments:: head"></head>
 
 </head>
  <body>
- <table>
+ <table border = "1" class = "table table-striped table-responsive">
      <thead>
      <tr>
          <th>Name</th>
@@ -25,7 +25,8 @@
          <td th:text="${drink.conpany></td>
          <td th:text="${drink.type></td>
          <td>
-
+            <a class ="btn btn-primary">update</a>
+             <a class="btn btn-danger">delete</a>
          </td>
      </tr>
      </tbody>
