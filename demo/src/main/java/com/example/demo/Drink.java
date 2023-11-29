@@ -4,11 +4,15 @@ package com.example.demo;
 
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
+
+import java.util.Date;
 import java.util.List;
 
 @Entity
-(name = "drink")
+@Table(name = "drink")
 public class Drink {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,6 +24,13 @@ public class Drink {
     private String company;
     private int price;
 
+    @CreationTimestamp
+    Date created_at;
+
+    @UpdateTimestamp
+    Date updated_at;
+    public Drink() {
+    }
 
     public int getPrice() {
         return price;
@@ -44,8 +55,6 @@ public class Drink {
     @OneToMany
     private List<Ingredient> ingredients;
 
-    public Drink() {
-    }
 
     public Drink(Long id, String name, int capacity, String colour, String type, String company, List <Ingredient> ingredients) {
         this.id = id;
