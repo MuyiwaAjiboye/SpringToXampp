@@ -24,7 +24,7 @@ public class DrinkController {
         public String showNewDrinkForm(Model model){
         Drink drink = new Drink();
         model.addAttribute("drink",drink);
-        return "new drink";
+        return "new_drinks";
     }
 
     @PostMapping ("/saveDrink")
